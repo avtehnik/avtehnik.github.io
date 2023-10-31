@@ -5,67 +5,99 @@
   <title>Title</title>
 </head>
 <body>
+<h2 id="date" ></h2>
 <table border="1">
   <tr>
+    <td>1</td>
     <td>январь</td>
     <td>січень</td>
     <td> January</td>
   </tr>
   <tr>
+    <td>2</td>
     <td>февраль</td>
     <td>лютий</td>
     <td> February</td>
   </tr>
   <tr>
+    <td>3</td>
     <td>март</td>
     <td> березень</td>
     <td> March</td>
   </tr>
   <tr>
+    <td>4</td>
     <td>апрель</td>
     <td> квітень</td>
     <td> April</td>
   </tr>
   <tr>
+    <td>5</td>
     <td>май</td>
     <td> травень</td>
     <td> May</td>
   </tr>
   <tr>
+    <td>6</td>
     <td>июнь</td>
     <td> червень</td>
     <td> June</td>
   </tr>
   <tr>
+    <td>7</td>
     <td>июль</td>
     <td> липень</td>
     <td> July</td>
   </tr>
   <tr>
+    <td>8</td>
     <td>август</td>
     <td> серпень</td>
     <td> August</td>
   </tr>
   <tr>
+    <td>9</td>
     <td>сентябрь</td>
     <td> вересень</td>
     <td> September</td>
   </tr>
   <tr>
+    <td>10</td>
     <td>октябрь</td>
     <td> жовтень</td>
     <td> October</td>
   </tr>
   <tr>
+    <td>11</td>
     <td>ноябрь</td>
     <td> листопад</td>
     <td> November</td>
   </tr>
   <tr>
+    <td>12</td>
     <td>декабрь</td>
     <td> грудень</td>
     <td> December</td>
   </tr>
 </table>
+
+<script>
+    var todaysDate = new Date();
+
+    function convertDate(date) {
+        var yyyy = date.getFullYear().toString();
+        var mm = (date.getMonth()+1).toString();
+        var dd  = date.getDate().toString();
+
+        var mmChars = mm.split('');
+        var ddChars = dd.split('');
+
+        return  (ddChars[1]?dd:"0"+ddChars[0])  + '-' + (mmChars[1]?mm:"0"+mmChars[0]) + '-' +  yyyy ;
+    }
+
+document.getElementById('date').innerHTML = convertDate(todaysDate);
+    console.log(convertDate(todaysDate));
+</script>
+
 </body>
 </html>
